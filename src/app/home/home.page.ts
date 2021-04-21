@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ArticlesService } from './../services/articles.service';
 
 @Component({
   selector: 'app-home',
@@ -6,7 +7,13 @@ import { Component } from '@angular/core';
   styleUrls: ['home.page.scss'],
 })
 export class HomePage {
+  items: any;
 
-  constructor() {}
+  constructor( public article: ArticlesService) {
+    this.article
+      .getPosts()
+      .subscribe(data => { this.items = data; });
+      console.log(this.items);
+  }
 
 }
