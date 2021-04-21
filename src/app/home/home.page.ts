@@ -12,7 +12,7 @@ export class HomePage {
   constructor( public article: ArticlesService) {
     this.article
       .getPosts()
-      .subscribe(data => { this.items = data; });
+      .subscribe(data => { this.items = []; });
       console.log(this.items);
   }
 

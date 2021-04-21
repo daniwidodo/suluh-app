@@ -13,6 +13,6 @@ export class ArticlesService {
   constructor(private http: HttpClient) {   }
 
    public getPosts() {
-     return this.http.get(this.mainUrl + 'posts/');
+     return this.http.get(this.mainUrl + 'posts/?_embed');
    }
 }
